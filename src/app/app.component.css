@@ -1,0 +1,25 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #1976d2;
+  margin-top: 30px;
+}
+h1 {
+  color: white; /* белый текст */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* лёгкая тень для читаемости */
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}

@@ -1,0 +1,108 @@
+.container {
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.8); /* слегка прозрачный */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  flex: 1;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /*background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); */
+
+  background: linear-gradient(57deg, #0e74f1,#aac8f8,#aaf8c1,#e3f995);
+
+  color: white;
+  font-weight: 600;
+  padding: 0 16px;
+  height: 40px;
+  border-radius: 8px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.add-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn:disabled {
+  background: #cccccc;
+  color: #666666;
+}
+
+
+mat-list-item {
+  padding: 0; /* оставляем минимальный padding */
+  border-radius: 8px;
+}
+
+
+
+
+.habit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.habit-name {
+  flex: 1;                   /* растягиваем название */
+  margin-right: 12px;        /* отступ от кнопок */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;                  /* расстояние между кнопками */
+  flex-shrink: 0;
+}
+
+.list-btn {
+  flex-shrink: 0;            /* не сжимаем кнопку */
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+
+
+
+
+mat-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+
+
+.list-btn {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.list-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}

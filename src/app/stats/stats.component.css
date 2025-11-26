@@ -1,0 +1,91 @@
+/* src/app/stats/stats.component.css */
+.stats-card {
+  padding: 22px;
+  margin-top: 15px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title span {
+  color: #3f51b5;
+}
+
+.subtitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.streak-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e3f2fd;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.streak-label {
+  font-size: 14px;
+  color: #1976d2;
+}
+
+.streak-value {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0d47a1;
+  line-height: 40px;
+}
+
+.streak-days {
+  font-size: 14px;
+  color: #1565c0;
+}
+
+.week-rows {
+  margin-top: 10px;
+}
+
+.week-row {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.week-label {
+  width: 90px;
+  font-weight: 500;
+}
+
+.week-bar-container {
+  flex: 1;
+  background: #eeeeee;
+  border-radius: 8px;
+  height: 10px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.week-bar {
+  height: 100%;
+  background: #4caf50;
+  border-radius: 8px;
+  transition: width 0.3s;
+}
+
+.week-value {
+  width: 40px;
+  text-align: right;
+  font-weight: 500;
+}
+
+.no-data {
+  color: #777;
+  font-style: italic;
+}

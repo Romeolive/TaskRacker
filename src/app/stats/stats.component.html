@@ -1,0 +1,36 @@
+
+<mat-card *ngIf="habit" class="stats-card">
+
+  <h2 class="title">Статистика: <span>{{ habit.name }}</span></h2>
+
+
+  <div class="streak-box">
+    <div class="streak-label">Текущая серия</div>
+    <div class="streak-value">{{ currentStreak }}</div>
+    <div class="streak-days">дней подряд</div>
+  </div>
+
+  <hr>
+
+  <h3 class="subtitle">Прогресс по неделям</h3>
+
+  <ng-container *ngIf="weeklyCounts.length; else noData">
+    <div class="week-rows">
+      <div class="week-row" *ngFor="let w of weeklyCounts">
+        <div class="week-label">Неделя {{ w.week }}</div>
+
+        <!-- Прогресс-бар -->
+        <div class="week-bar-container">
+          <div class="week-bar" [style.width.%]="(w.count / 7) * 100"></div>
+        </div>
+
+        <div class="week-value">{{ w.count }}/7</div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Если нет данных -->
+  <ng-template #noData>
+    <p class="no-data">Нет данных для текущего месяца</p>
+  </ng-template>
+</mat-card>

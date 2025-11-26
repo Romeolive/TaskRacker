@@ -1,0 +1,17 @@
+
+<mat-card *ngIf="habit">
+  <h2>Трекер: {{habit.name}}</h2>
+  <table class="calendar">
+    <tr>
+      <th *ngFor="let day of ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']">{{day}}</th>
+    </tr>
+    <tr *ngFor="let week of weeks">
+      <td *ngFor="let day of week"
+          [class.empty]="isNaN(day.getTime())"
+          [class.done]="!isNaN(day.getTime()) && isCompleted(day)"
+          (click)="toggleDate(day)">
+        {{ isNaN(day.getTime()) ? '' : day.getDate() }}
+      </td>
+    </tr>
+  </table>
+</mat-card>

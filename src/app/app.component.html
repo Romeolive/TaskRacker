@@ -1,0 +1,10 @@
+<div style="padding: 20px">
+  <h1>Трекер привычек</h1>
+
+  <app-habit-list (habitSelected)="select($event)"></app-habit-list>
+
+  <div *ngIf="selectedHabit">
+    <app-tracker [habit]="selectedHabit"></app-tracker>
+    <app-stats [habit]="selectedHabit"></app-stats>
+  </div>
+</div>

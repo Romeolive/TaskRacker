@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Градиент на весь фон страницы */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #c0d8f5,#c3dffd,#a3c8fd,#8ebaf7,#649fed);
+  font-family: 'Roboto', sans-serif;
+}
+
+/*!* Можно дополнительно задать цвет текста по умолчанию *!*/
+/*body, app-root {*/
+/*  color: #ffffff;*/
+/*}*/
+
