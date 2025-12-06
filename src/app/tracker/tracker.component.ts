@@ -13,19 +13,30 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class TrackerComponent implements OnChanges {
   @Input() habit!: Habit | null;
+
   weeks: Date[][] = [];
+  currentDate = new Date();
 
   constructor(private habitService: HabitService) {}
 
   ngOnChanges() {
     if (this.habit) {
-      this.generateCalendar(new Date());
+      this.generateCalendar();
     }
   }
 
-  private generateCalendar(currentDate: Date) {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+  changeMonth(offset: number) {
+    this.currentDate = new Date(
+      this.currentDate.getFullYear(),
+      this.currentDate.getMonth() + offset,
+      1
+    );
+    this.generateCalendar();
+  }
+
+  private generateCalendar() {
+    const year = this.currentDate.getFullYear();
+    const month = this.currentDate.getMonth();
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
 
@@ -61,15 +72,13 @@ export class TrackerComponent implements OnChanges {
     if (!this.habit || Number.isNaN(date.getTime())) return;
 
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // обнуляем часы для точного сравнения
+    today.setHours(0, 0, 0, 0);
     const target = new Date(date);
     target.setHours(0, 0, 0, 0);
 
-    // запрет на будущее
     if (target.getTime() > today.getTime()) return;
 
     const iso = target.toISOString().substring(0, 10);
     this.habitService.toggleCompletion(this.habit.id, iso);
   }
-
 }

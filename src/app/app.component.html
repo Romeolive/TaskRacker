@@ -4,7 +4,7 @@
   <app-habit-list (habitSelected)="select($event)"></app-habit-list>
 
   <div *ngIf="selectedHabit">
-    <app-tracker [habit]="selectedHabit"></app-tracker>
-    <app-stats [habit]="selectedHabit"></app-stats>
+    <app-tracker #tracker [habit]="selectedHabit"></app-tracker>
+    <app-stats [habit]="selectedHabit" [currentDate]="tracker.currentDate"></app-stats>
   </div>
 </div>

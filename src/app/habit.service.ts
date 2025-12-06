@@ -9,7 +9,7 @@ export class HabitService {
   public habits$ = this.habitsSubject.asObservable();
 
   constructor() {
-    // Загрузка привычек из localStorage или пустой массив
+    // Загрузка привычек из localStorage
     const data = JSON.parse(localStorage.getItem('habits') || '[]');
     this.habitsSubject.next(data);
   }
@@ -23,7 +23,7 @@ export class HabitService {
   addHabit(name: string) {
     const current = this.habitsSubject.value;
     const newHabit: Habit = {
-      id: Date.now(), // простой уникальный id
+      id: Date.now(),
       name,
       completions: []
     };
@@ -62,7 +62,7 @@ export class HabitService {
 
 
 
-  // Рассчитать текущий streak (количество подряд дней, включая последний)
+  // Рассчитать текущий streak
   getCurrentStreak(habit: Habit): number {
     if (!habit.completions.length) return 0;
 

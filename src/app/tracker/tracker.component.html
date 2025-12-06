@@ -1,6 +1,14 @@
-
 <mat-card *ngIf="habit">
   <h2>Трекер: {{habit.name}}</h2>
+
+  <div class="month-switch">
+    <button class="nav-btn" (click)="changeMonth(-1)">⇦</button>
+    <span class="month-label">
+      {{ currentDate | date:'LLLL yyyy' }}
+    </span>
+    <button class="nav-btn" (click)="changeMonth(1)">⇨</button>
+  </div>
+
   <table class="calendar">
     <tr>
       <th *ngFor="let day of ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']">{{day}}</th>

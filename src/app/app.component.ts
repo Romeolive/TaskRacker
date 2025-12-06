@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HabitListComponent } from './habit-list.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { StatsComponent } from './stats/stats.component';
@@ -14,10 +14,12 @@ import { Habit } from './habit.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild('tracker') tracker!: TrackerComponent;
+
   selectedHabit: Habit | null = null;
 
   constructor(private habitService: HabitService) {
-    // 🔥 Подписка на обновление привычек (ОБЯЗАТЕЛЬНО)
     this.habitService.habits$.subscribe(habits => {
       if (this.selectedHabit) {
         const updated = habits.find(h => h.id === this.selectedHabit!.id);
